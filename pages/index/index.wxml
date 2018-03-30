@@ -1,0 +1,14 @@
+<view bindtap="viewTap">{{title}}</view>
+<view wx:for="{{array}}" wx:for-item="value" wx:for-index="i">{{i}}:{{value}}</view>
+<view wx:if="{{view == 'webview'}}">webview</view>
+<view wx:if="{{view == 'mina'}}">mina</view>
+<template name="staffname">
+    <view>firstname:{{firstName}},lastname:{{lastName}}</view>
+</template>
+<switch wx:for="{{objectArray}}" wx:key="unique">{{item.id}}</switch>
+<button bindtap="switch" data-hi="WeChat">Switch</button>
+<button bindtap="addToFront">Add to the front</button>
+<template is="staffname" data="{{...staffA}}"></template>
+<template is="staffname" data="{{...staffB}}"></template>
+<template is="staffname" data="{{...staffC}}"></template>
+<button bindtap="changeView"> Change normal data </button>
